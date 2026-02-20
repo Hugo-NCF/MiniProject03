@@ -4,11 +4,20 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #463939;
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.85;
 }

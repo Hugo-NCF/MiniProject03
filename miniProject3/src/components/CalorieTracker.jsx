@@ -51,7 +51,7 @@ function CalorieTracker() {
   return (
     <div style={pageStyle}>
       <div style={cardStyle}>
-        <h1>Calorie Tracker</h1>
+        <h1 style={{ marginBottom: "25px" }}>Calorie Tracker</h1>
 
         <div style={formStyle}>
           <input
@@ -81,7 +81,7 @@ function CalorieTracker() {
           onEdit={handleEdit}
         />
 
-        <h2 style={{ marginTop: "20px" }}>
+        <h2 style={{ marginTop: "25px" }}>
           Total Calories: {totalCalories}
         </h2>
       </div>
@@ -89,46 +89,43 @@ function CalorieTracker() {
   );
 }
 
-/* ---------- Styles ---------- */
+/* -------- STYLES -------- */
 
 const pageStyle = {
   minHeight: "100vh",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#f4f6f8",
-  fontFamily: "Arial, sans-serif"
+  alignItems: "center"
 };
 
 const cardStyle = {
   backgroundColor: "white",
-  padding: "30px",
-  borderRadius: "12px",
-  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-  width: "420px",
+  padding: "40px",
+  borderRadius: "16px",
+  boxShadow: "0 15px 35px rgba(0,0,0,0.08)",
+  width: "450px",
   textAlign: "center"
 };
 
 const formStyle = {
   display: "flex",
   gap: "10px",
-  marginBottom: "20px"
+  marginBottom: "25px"
 };
 
 const inputStyle = {
   flex: 1,
-  padding: "8px",
-  borderRadius: "6px",
+  padding: "10px",
+  borderRadius: "8px",
   border: "1px solid #ccc"
 };
 
 const addButtonStyle = {
-  padding: "8px 12px",
-  borderRadius: "6px",
+  padding: "10px 15px",
+  borderRadius: "8px",
   border: "none",
   backgroundColor: "#4CAF50",
-  color: "white",
-  cursor: "pointer"
+  color: "white"
 };
 
 export default CalorieTracker;
