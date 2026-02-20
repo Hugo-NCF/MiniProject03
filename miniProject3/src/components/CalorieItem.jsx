@@ -1,41 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
-const CalorieItem = ({ name }) => {
-  
-  const myStyle = {
-    color: "white",
-    backgroundColor: "grey",
-    padding: "10px",
-    fontFamily: "Arial",
-    borderRadius: "10px",
-    margin: "10px",
-  };
-
-  const buttonContainer = {
-    display: "flex",
-    gap: "10px",
-  };
-
-  const [item, setItem] = useState(0);
-
-  const itemUp = () => {
-    setItem(item + 1);
-  };
-
-  const itemDown = () => {
-    if (item > 0) {
-      setItem(item - 1);
-    }
-  };
+const CalorieItem = ({ name, calories, count, onAdd, onRemove }) => {
 
   return (
-    <div style={myStyle}>
-      <h2>{name}</h2>
-      <p>Count: {item}</p>
+    <div
+      style={{
+        color: "white",
+        backgroundColor: "grey",
+        padding: "15px",
+        borderRadius: "10px",
+        marginBottom: "15px",
+        width: "200px"
+      }}
+    >
+      <h3>{name}</h3>
+      <p>Calories per item: {calories}</p>
+      <p>Count: {count}</p>
 
-      <div style={buttonContainer}>
-        <button onClick={itemUp}>Add</button>
-        <button onClick={itemDown}>Remove</button>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <button onClick={onAdd}>+</button>
+        <button onClick={onRemove}>−</button>
       </div>
     </div>
   );
