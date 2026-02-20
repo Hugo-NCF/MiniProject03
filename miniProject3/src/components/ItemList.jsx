@@ -1,26 +1,24 @@
-import React from "react";
+import CalorieItem from "./CalorieItem";
 
-const ItemList = ({ items }) => {
-
-  const totalCalories = items.reduce((total, item) => {
-    return total + item.calories * item.count;
-  }, 0);
-
+function ItemList({ items, onDelete, onEdit }) {
   return (
-    <div
-      style={{
-        padding: "20px",
-        backgroundColor: "lightblue",
-        borderRadius: "12px",
-        width: "180px",
-        height: "fit-content",
-        textAlign: "center"
-      }}
-    >
-      <h2>Total</h2>
-      <h3>{totalCalories} cal</h3>
-    </div>
+    <ul style={listStyle}>
+      {items.map(item => (
+        <CalorieItem
+          key={item.id}
+          item={item}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
+      ))}
+    </ul>
   );
+}
+
+const listStyle = {
+  listStyle: "none",
+  padding: 0,
+  margin: 0
 };
 
 export default ItemList;
